@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
+</head>
+<body>
+    <div id="player"></div>
+    <script>
+        var player = new Clappr.Player({
+            source: "https://27syrialive.s3.us-east-2.amazonaws.com/bein1/master.m3u8",
+            parentId: "#player",
+            autoPlay: true,
+            hlsjsConfig: {
+                xhrSetup: function(xhr, url) {
+                    // هنا نحاول "خداع" الخادم بأن الطلب قادم من الموقع الأصلي
+                    xhr.setRequestHeader("Referer", "https://z.depoooo.com/");
+                    xhr.setRequestHeader("Origin", "https://z.depoooo.com/");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
