@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>اختبار المشغل</title>
     <script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
 </head>
 <body>
     <div id="player"></div>
     <script>
         var player = new Clappr.Player({
-            source: "https://27syrialive.s3.us-east-2.amazonaws.com/bein1/master.m3u8",
+            source: "https://live-f24-ar.akamaized.net/hls/live/2003467/f24_ar/playlist.m3u8",
             parentId: "#player",
-            autoPlay: true,
-            hlsjsConfig: {
-                xhrSetup: function(xhr, url) {
-                    // هنا نحاول "خداع" الخادم بأن الطلب قادم من الموقع الأصلي
-                    xhr.setRequestHeader("Referer", "https://z.depoooo.com/");
-                    xhr.setRequestHeader("Origin", "https://z.depoooo.com/");
-                }
-            }
+            autoPlay: true
         });
+        console.log("تم تحميل المشغل بنجاح!");
     </script>
 </body>
 </html>
